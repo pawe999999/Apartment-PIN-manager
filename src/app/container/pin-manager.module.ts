@@ -8,7 +8,6 @@ import { PinManagerRowComponent } from './components/pin-manager-row/pin-manager
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NumberOnlyDirective } from '../shared/directive/numbersOnly.directive';
-import { DateFormatDirective } from '../shared/directive/dateFormat.directive';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -28,7 +27,6 @@ import {MatNativeDateModule} from '@angular/material/core';
         PinManagerFormComponent,
         PinManagerRowComponent,
         NumberOnlyDirective,
-        DateFormatDirective
     ],
     providers: [],
 })
