@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="flex-row space-between">
+        <h1 class="white">Door for apartament 23</h1>
+        <button class="button button-info" (click)="openModal()">New Pin</button>
+    </div>
+
+    <div class="flex-row margin-1 padding-1">
+        <span class="w-40 white">Name</span>
+        <span class="w-30 white">From</span>
+        <span class="w-30 white">To</span>
+    </div>
+    <app-pin-manager-row *ngFor="let pin of pinList"
+        [pin]="pin"
+        (click)="openModal(pin)"
+    ></app-pin-manager-row>
+</div>
+<ng-container #pinForm></ng-container>

@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+
+$white: #FFFFFF;
+$blue: #34CFFD;
+$red: #FF7474;
+
+
+*, body, html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Lato;
+}
+
+span, p, button {
+    font-family: Lato;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+h1 {
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.flex-row {
+    display: flex; 
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex; 
+    flex-direction: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.padding-1 {
+    padding: 1rem;  
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.button {
+    padding: 1rem;
+    border-radius: 5px;
+    color: $white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.button-info {
+    background: $blue;
+    border: 1px solid $blue;
+}
+
+.button-info:hover {
+    background: $white;
+    color: $blue;
+}
+
+.button-danger {
+    background: $red;
+    border: 1px solid $red;
+}
+
+.button-danger:hover {
+    background: $white;
+    color: $red;
+}
+
+.error {
+    color: $red;
+}
+
+.white {
+    color: $white;
+}

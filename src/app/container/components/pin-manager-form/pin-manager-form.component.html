@@ -1,0 +1,47 @@
+<div class="modal-overlay" >
+    <div class="modal-content flex-column">
+      <div class="flex-row header-box ">
+        <h1>{{newPin ? 'New PIN' : 'PIN details'}}</h1>
+        <span class="close-button" (click)="closeModal()">X</span>
+      </div>
+      <div>
+          <form class="flex-column" [formGroup]="form">
+              <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input type="text" matInput formControlName="alias">
+                <mat-error>Name can be up to 20 characters long</mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Pin</mat-label>
+                <input type="text" matInput formControlName="pin" appNumberOnly>
+                <mat-error>Pin must be at least 6 digit long</mat-error>
+              </mat-form-field>
+              <p class="error" *ngIf="this.form.get('pin').hasError('consecutiveNumbers')">PIN cannot have consecutive numbers</p>
+
+              <mat-form-field class="demo-full-width margin-top" >
+                <input matInput [matDatepicker]="picker2" 
+                      placeholder="Start Date"
+                      formControlName="validFrom"
+                      >
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 ></mat-datepicker>
+            </mat-form-field>
+
+              
+              <mat-form-field class="demo-full-width margin-top" >
+                <input matInput [matDatepicker]="picker" 
+                      placeholder="End Date"
+                      formControlName="validTo"
+                      [errorStateMatcher]="matcher" 
+                      >
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker ></mat-datepicker>
+            </mat-form-field>
+            <p class="error" *ngIf="this.form.hasError('endDateBeforeStartDate')">End date cannot set before start date</p>
+            <p class="error" *ngIf="this.form.hasError('endDateInPast')">End date cannot be in the past</p>
+          </form>
+      </div>
+      <button class="button footer"  [ngClass]="newPin ? 'button-info' : 'button-danger'" (click)="modifyPin()">{{newPin ? 'Create' : 'Delete'}}</button>
+    </div>
+  </div>

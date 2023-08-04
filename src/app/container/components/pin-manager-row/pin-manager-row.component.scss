@@ -1,0 +1,17 @@
+.pin-row-container {
+    background-color: #FFFFFF;
+    margin: 1rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pin-row-container:hover {
+    background: rgb(195, 237, 250);
+
+}
+
+.pin-row-container:hover .highlight {
+    color: rgba(52, 207, 253);
+    transition: 0.2s ease;
+}
