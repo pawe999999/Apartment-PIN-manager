@@ -1,7 +1,8 @@
 
 
 import { FormControl, FormGroup } from '@angular/forms';
-import { dateValidator, isConsecutiveNumbers } from './pinForm.model';
+import { dateValidator } from './pinForm.model';
+import { isConsecutiveNumbers } from '../utils/isConsecutiveNumbers';
 
 describe('Date Validator', () => {
   it('should validate when end date is after start date', () => {

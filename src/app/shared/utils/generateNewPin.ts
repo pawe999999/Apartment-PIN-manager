@@ -1,4 +1,4 @@
-import { isConsecutiveNumbers } from "../models/pinForm.model";
+import { isConsecutiveNumbers } from "./isConsecutiveNumbers";
 
 export function generateNewPin(): string  {
     

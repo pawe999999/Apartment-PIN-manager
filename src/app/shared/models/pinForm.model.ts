@@ -1,4 +1,5 @@
 import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from "@angular/forms";
+import { isConsecutiveNumbers } from "../utils/isConsecutiveNumbers";
 
 export const getPinForm = (): FormGroup =>
     new FormGroup ({
@@ -41,14 +42,4 @@ export function consecutiveNumbersValidator(): ValidatorFn {
   
       return null;
     };
-  }
-
-export function isConsecutiveNumbers(value: string): boolean {
-    const digits = value.split('').map(i => +i);
-    for (let i = 0; i < digits.length - 1; i++) {
-      if (digits[i] - digits[i + 1] === 1 || digits[i] - digits[i + 1] === -1) {
-        return true;
-      }
-    }
-    return false;
   }
